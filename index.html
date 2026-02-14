@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti, Mi Amor 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .hearts-background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(45deg);
+            animation: float 6s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            left: -10px;
+        }
+
+        .heart::after {
+            top: -10px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            width: 90%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .envelope {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c86dd7 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .envelope h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .date {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .letter {
+            padding: 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .letter p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .signature {
+            text-align: right;
+            font-size: 1.3em;
+            font-style: italic;
+            color: #ff6b9d;
+            margin-top: 30px;
+        }
+
+        .interactive-heart {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff0f5 100%);
+        }
+
+        .big-heart {
+            font-size: 80px;
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .big-heart:hover {
+            transform: scale(1.2);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ff6b9d;
+            font-weight: bold;
+            min-height: 30px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .message.show {
+            opacity: 1;
+        }
+
+        .click-hint {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 10px;
+        }
+        .footer {
+            background: #667eea;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .envelope h1 {
+                font-size: 2em;
+            }
+
+            .letter {
+                padding: 25px;
+            }
+
+            .letter p {
+                font-size: 1em;
+            }
+
+            .big-heart {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-background" id="heartsContainer"></div>
+    
+    <div class="container">
+        <div class="envelope">
+            <h1>💌 Para Ti, Mi Amor 💌</h1>
+            <p class="date">San Valentín 2026</p>
+        </div>
+
+        <div class="letter">
+            <p>Mi amor,</p>
+            
+            <p>En este día tan especial, quiero que sepas que cada momento a tu lado es un regalo. Tu sonrisa ilumina mis días y tu amor llena mi corazón de felicidad.</p>
+            
+            <p>Desde el primer día que te conocí, supe que eras alguien especial. Cada día contigo es una nueva aventura, y no puedo imaginar mi vida sin ti.</p>
+            
+            <p>Gracias por ser mi compañera, mi mejor amiga, mi confidente y mi amor verdadero. Eres la razón por la que sonrío cada mañana y la última persona en la que pienso antes de dormir.</p>
+            
+            <p>Te amo más de lo que las palabras pueden expresar, y seguiré amándote por siempre.</p>
+            
+            <div class="signature">
+                Con todo mi amor,<br>
+                Tu enamorado 💕
+            </div>
+        </div>
+
+        <div class="interactive-heart">
+            <div class="big-heart" id="bigHeart">❤️</div>
+            <p class="click-hint">Haz clic en el corazón</p>
+            <div class="message" id="message"></div>
+        </div>
+
+        <div class="footer">
+            Hecho con amor el 14 de Febrero de 2026 ❤️
+        </div>
+    </div>
+
+    <script>
+        // Crear corazones flotantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            
+            const size = Math.random() * 15 + 10;
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+            
+            heart.querySelector = function() {
+                return {
+                    style: {
+                        width: size + 'px',
+                        height: size + 'px'
+                    }
+                };
+            };
+            
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        setInterval(createHeart, 300);
+
+        // Mensajes de amor al hacer clic
+        const messages = [
+            "¡Te amo con todo mi corazón! 💕",
+            "Eres lo mejor que me ha pasado 🌟",
+            "Cada día te amo más 💖",
+            "Gracias por existir, mi amor 🥰",
+            "Eres mi persona favorita 💗",
+            "Contigo, todo es mejor 💝",
+            "Mi corazón es tuyo para siempre 💘",
+            "Eres mi sueño hecho realidad ✨"
+        ];
+
+        let clickCount = 0;
+        const bigHeart = document.getElementById('bigHeart');
+        const messageDiv = document.getElementById('message');
+
+        bigHeart.addEventListener('click', function() {
+            clickCount++;
+            const messageText = messages[clickCount % messages.length];
+            
+            messageDiv.classList.remove('show');
+            
+            setTimeout(() => {
+                messageDiv.textContent = messageText;
+                messageDiv.classList.add('show');
+            }, 100);
+
+            // Animación del corazón
+            this.style.transform = 'scale(1.3)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+
+            // Crear mini corazones
+            for (let i = 0; i < 5; i++) {
+                createMiniHeart();
+            }
+        });
+
+        function createMiniHeart() {
+            const miniHeart = document.createElement('div');
+            miniHeart.textContent = '💕';
+            miniHeart.style.position = 'fixed';
+            miniHeart.style.left = (window.innerWidth / 2 - 20) + Math.random() * 40 + 'px';
+            miniHeart.style.top = (window.innerHeight / 2) + 'px';
+            miniHeart.style.fontSize = '30px';
+            miniHeart.style.zIndex = '1000';
+            miniHeart.style.pointerEvents = 'none';
+            miniHeart.style.transition = 'all 1s ease-out';
+            
+            document.body.appendChild(miniHeart);
+            
+            setTimeout(() => {
+                miniHeart.style.transform = `translate(${(Math.random() - 0.5) * 200}px, ${-200 - Math.random() * 100}px)`;
+                miniHeart.style.opacity = '0';
+            }, 10);
+            
+            setTimeout(() => {
+                miniHeart.remove();
+            }, 1100);
+        }
+    </script>
+</body>
+</html>
